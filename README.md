@@ -24,6 +24,6 @@ git clone https://github.com/Victor-Rosa/desafio-refera.git
 Com o docker compose instalado, basta executar:
 
 ```bash
-cd refera-data-engineer-short-challenge
+cd desafio-refera
 docker-compose up
 ```
