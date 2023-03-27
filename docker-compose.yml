@@ -23,7 +23,7 @@ services:
       - 5440:5432
       
   myapp:
-    image: rosavictors/extract-load:1.0.0
+    image: rosavictors/extract_load:1.0.0
 
 volumes:
     postgres:

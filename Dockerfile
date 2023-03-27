@@ -4,4 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-CMD ["python", "extract_and_load.py"]
+RUN cd ./app
+
+CMD ["python3", "extract_and_load.py", "password", "password"]
