@@ -1,7 +1,8 @@
 import psycopg2
 import os
+from contextlib import closing
 
-# Funçao para concectar o banco de dados Postgress
+# Função para concectar o banco de dados Postgress
 def connect_db(hostname, name_db, user, password, port):
     try:
         conn = psycopg2.connect(
@@ -25,15 +26,17 @@ db_analytics_conn = connect_db(
     "localhost", "analytics", "postgres", "password", 5440)
 
 # Fazendo o dump do banco de dados Transacional
-dump_file = "data/dump.sql"
+dump_file = "dump.sql"
 dump_command = f'pg_dump -U postgres -h localhost dvdrental > {dump_file}'
 os.system(dump_command)
 
 # Copiando o dump do banco de dados Transacional para o banco Analítico
-copy_dump_command = 'psql -U postgres -h localhost -p 5440 -d analytics -f data/dump.sql'
+copy_dump_command = f'psql -U postgres -h localhost -p 5440 -d analytics -f {dump_file}'
 os.system(copy_dump_command)
 
 
 # Encerrando as Conexões
-db_transactional_conn.close()
-db_analytics_conn.close()
+with closing(db_transactional_conn) as oltp_conn, (db_analytics_conn) as olap_conn:
+    oltp_conn.close()
+    olap_conn.close()
+    print("Conexão Terminada, Projeto finalizado")
