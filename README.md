@@ -36,9 +36,10 @@ python3 extract_and_load.py
 docker-compose up
 ```
 Você deve ver a seguinte mensagem no seu terminal: 
+
 ![terminal](terminal.png)
 
-é so digitar a senha do dois Banco de dados, que neste caso é: `password`
+é so digitar a senha dos dois Banco de dados, que neste caso é: `password`
 
 Pronto agora o seu Banco de Dados `Analytics` está com as informações do `Transactional`
 
