@@ -27,3 +27,19 @@ Com o docker compose instalado, basta executar:
 cd desafio-refera
 docker-compose up
 ```
+
+Logo depois para rodar o script de cópia, basta executar:
+
+```bash
+cd ./app
+python3 extract_and_load.py
+docker-compose up
+```
+Você deve ver a seguinte mensagem no seu terminal: 
+![terminal](terminal.png)
+
+é so digitar a senha do dois Banco de dados, que neste caso é: `password`
+
+Pronto agora o seu Banco de Dados `Analytics` está com as informações do `Transactional`
+
+![dbeaver](dbeaver_analytics.png)
