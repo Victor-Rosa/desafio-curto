@@ -33,7 +33,6 @@ Logo depois para rodar o script de cópia, basta executar:
 ```bash
 cd ./app
 python3 extract_and_load.py
-docker-compose up
 ```
 Você deve ver a seguinte mensagem no seu terminal: 
 
