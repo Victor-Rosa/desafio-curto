@@ -18,13 +18,13 @@ Clone o repositório:
 
 
 ```bash
-git clone https://github.com/Victor-Rosa/desafio-refera.git
+git clone https://github.com/Victor-Rosa/desafio-curto.git
 ```
 
 Com o docker compose instalado, basta executar:
 
 ```bash
-cd desafio-refera
+cd desafio-curto
 docker-compose up
 ```
 
